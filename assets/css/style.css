@@ -1,0 +1,16 @@
+h1 {
+    font-family: "Press Start 2P";
+    font-size: 72px;
+}
+
+p {
+    font-size: 18px;
+}
+
+#playerOneName, #playerTwoName {
+    font-family: "Press Start 2P";
+}
+
+#chatDisplay {
+    overflow: auto;
+}

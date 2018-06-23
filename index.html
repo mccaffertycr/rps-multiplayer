@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/app.js"></script>
+    <title>multiplayer roshambo</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Jumbotron Section -->
+            <div class="jumbotron">
+                    <h1 class="text-center"><strong>ROSHAMBO</strong></h1>
+                    <p class="text-center">enter name to start a new game</p>
+            </div>
+
+            <!-- Add Name and Info Section -->
+            <div class="container text-center">
+                <p id="name-info">placeholder text</p>
+                <p id="turn-info">placeholder text</p> 
+            </div>           
+            <div class="mt-3 formPanel text-center"> 
+                    <form id="name">
+                          <input type="text" id="name-input" placeholder="Your Name">
+                          <input id="add-name" type="submit" value="Submit">
+                    </form>
+            </div>
+
+            <!-- Game Section -->
+		    <div class="panel panel-default">
+                <div class="row"> 
+    
+                    <!-- Player 1 -->
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="panel panel-default playerPanel" id="player1panel">
+                            <div class="panel-heading panelName">
+                                <h3 class="panel-title text-center" id="playerOneName"></h3>
+                            </div>
+    
+                            <div class="panel-body panelOption text-center">
+                                <img data="r" src="assets/images/r.png">
+                                <img data="p" src="assets/images/p.png">
+                            </div>
+    
+                            <div class="panel-body panelOption text-center">
+                                <img data="s" src="assets/images/s.png">
+                            </div>
+    
+                            <div class="panel-body panelStats text-center">
+                                <div class="stats" id="player1Stats"></div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!-- Game Outcome Section -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 mt-3">
+                        <div class="panel panel-default gamePanel">
+                            <h3 class="panel-title text-center" id="roundOutcome">Rock-Paper-Scissors</h3>
+                        </div>
+                    </div> 
+                    
+                     <!-- Player 2 -->
+                     <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="panel panel-default playerPanel" id="player2panel">
+                                <div class="panel-heading panelName">
+                                    <h3 class="panel-title text-center" id="playerTwoName"></h3>
+                                </div>
+        
+                                <div class="panel-body panelOption text-center">
+                                    <img data="r" src="assets/images/r.png">
+                                    <img data="p" src="assets/images/p.png">
+                                </div>
+        
+                                <div class="panel-body panelOption text-center">
+                                    <img data="s" src="assets/images/s.png">
+                                </div>
+        
+                                <div class="panel-body panelStats text-center">
+                                    <div class="stats" id="player2Stats"></div>
+                                </div>
+                            </div>
+                    </div> 
+            </div>
+        </div>
+
+        <!-- Chat Section -->
+
+	    <div class="row">
+
+            <table class="table table-striped">
+                <thead>
+                    <th scope="col"></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[HH:mm](tester): test msg</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="chatForm" class="form-group">
+            <div class="chatPanel row"> 
+                    <input type="text" class="form-control" id="chat-input" placeholder="">
+                    <input id="chat-send" type="submit" value="Send">
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- footer -->
+    <div class="container-fluid bg-dark text-white text-center">    
+        <div class="footer navbar-fixed-bottom text-center" id="footerPanel">
+            <div class="copyright">© 2018, mccaffertycr, All rights reserved</div>
+        </div>      
+    </div>       
+
+</body>
+</html>
