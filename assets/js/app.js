@@ -90,17 +90,6 @@ database.ref("players").on("value", function(snap) {
 	}
 });
 
-// Attach a listener that detects user disconnection events
-database.ref("players").on("child_removed", function(snap) {
-	var msg = "[" + moment().format("HH:mm A") + "](" + snap.val().name + "): has disconnected!";
-
-	// Get a key for the disconnection chat entry
-	var chatKey = database.ref("chat").push().key;
-
-	// Save the disconnection chat entry
-	database.ref("chat/" + chatKey).set(msg);
-});
-
 // Attach a listener to the database /chat/ node to listen for any new chat messages
 database.ref("chat").on("child_added", function(snap) {
     var chatMsg = snap.val();
@@ -126,7 +115,7 @@ database.ref("chat").on("child_added", function(snap) {
 
 // listen for disconnections
 database.ref("players").on("child_removed", function(snap) {
-	var msg = snap.val().name + " has disconnected!";
+	var msg = "[" + moment().format("HH:mm A") + "](" + snap.val().name + "): has disconnected!";
 
 	// Get a key for the disconnection chat entry
 	var chatKey = database.ref().child("chat").push().key;
