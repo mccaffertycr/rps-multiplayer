@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="assets/js/config.js"></script>
-    <script src="assets/js/app.js"></script>
     <title>multiplayer roshambo</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon_iQD_icon.ico"/>
 </head>
@@ -30,7 +29,7 @@
             <!-- Add Name and Info Section -->
             <div class="row mb-2">
             <div class="container text-center">
-                <p id="name-info">placeholder text</p> 
+                <p id="waitingNotice"></p> 
             </div>           
             <div class="mt-3 form-group mx-auto"> 
                     <form id="name">
@@ -46,21 +45,21 @@
     
                     <!-- Player 1 -->
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="card card-default playerCard" id="player1card">
-                            <div class="card-title cardName text-center">
+                        <div class="playerCard" id="player1card">
+                            <div class="cardName text-center">
                                 <h3 class="card-subtitle" id="playerOneName"></h3>
                             </div>
     
-                            <div class="card-body cardOption text-center">
-                                <img data="r" src="assets/images/r.png" alt="rock">
-                                <img data="p" src="assets/images/p.png" alt="paper">
+                            <div class="cardOption text-center">
+                                <img class="p1option" data="r" src="assets/images/r.png" alt="rock" id="rock">
+                                <img class="p1option" data="p" src="assets/images/p.png" alt="paper">
                             </div>
  
-                            <div class="card-body cardOption text-center">
-                                <img data="s" src="assets/images/s.png" alt="scissors">
+                            <div class="cardOption text-center">
+                                <img class="p1option" data="s" src="assets/images/s.png" alt="scissors">
                             </div>
     
-                            <div class="card-body cardOption text-center">
+                            <div class="cardOption text-center">
                                 <div class="stats" id="player1Stats"></div>
                             </div>
                         </div>
@@ -68,50 +67,45 @@
                     
                     <!-- Game Outcome Section -->
                     <div class="col-lg-4 col-md-4 col-sm-4 mt-3">
-                        <div class="card card-default game-Card">
-                            <h3 class="card-title text-center" id="roundOutcome">waiting for players</h3>
+                        <div class="game-Card">
+                            <h3 class="text-center" id="roundOutcome">waiting for players</h3>
                         </div>
                     </div> 
                     
                      <!-- Player 2 -->
                      <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="card card-default playerCard" id="player2card">
-                                <div class="card-title cardName text-center">
+                            <div class="playerCard" id="player2card">
+                                <div class="cardName text-center">
                                     <h3 class="card-subtitle" id="playerTwoName"></h3>
                                 </div>
         
-                                <div class="card-body cardOption text-center">
-                                    <img data="r" src="assets/images/r.png" alt="rock">
-                                    <img data="p" src="assets/images/p.png" alt="paper" >
+                                <div class="cardOption text-center">
+                                    <img class="p2option" data="r" value="r" src="assets/images/r.png" alt="rock">
+                                    <img class="p2option" data="p" value="p" id="p" src="assets/images/p.png" alt="paper" >
                                 </div>
         
-                                <div class="card-body cardOption text-center">
-                                    <img data="s" src="assets/images/s.png" alt="scissors">
+                                <div class="cardOption text-center">
+                                    <img class="p2option" data="s" src="assets/images/s.png" alt="scissors">
                                 </div>
         
-                                <div class="card-body cardOption text-center">
+                                <div class="cardOption text-center">
                                     <div class="stats" id="player2Stats"></div>
                                 </div>
                             </div>
                     </div> 
+                </div>
             </div>
-        </div>
 
         <!-- Chat Section -->
 
 	    <div class="row mt-2 mb-1">
-        <div class="card card-default col-12">
+        <div class="col-12">
             <table class="table table-striped">
                 <thead>
                     <th scope="col"></th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>[HH:mm](tester1): test msg</td>
-                    </tr>
-                    <tr>
-                        <td>[HH:mm](tester2): test msg</td>
-                    </tr>
+                <tbody id="chat-table">
+                  
                 </tbody>
             </table>
         </div>
@@ -123,7 +117,7 @@
                     <input class="col-1" id="chat-send" type="submit" value="Send">
                 </div>
             </div>
-        </div>
+            </div>
         
 
     </div>
@@ -135,5 +129,6 @@
         </div>      
     </div>       
 
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
