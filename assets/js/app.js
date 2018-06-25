@@ -115,7 +115,7 @@ database.ref("chat").on("child_added", function(snap) {
 
 // listen for disconnections
 database.ref("players").on("child_removed", function(snap) {
-	var msg = "[" + moment().format("HH:mm A") + "](" + snap.val().name + "): has disconnected!";
+	var msg = "[" + moment().format("HH:mm") + "](" + snap.val().name + "): has disconnected!";
 
 	// Get a key for the disconnection chat entry
 	var chatKey = database.ref().child("chat").push().key;
@@ -207,7 +207,7 @@ $("#add-name").on("click", function(event) {
         
         
 		// Add a user joining message to the chat
-		var msg = "[" + moment().format("HH:mm A") + "](" + yourPlayerName + "): has joined!";
+		var msg = "[" + moment().format("HH:mm") + "](" + yourPlayerName + "): has joined!";
 		console.log(msg);
 
 		// Get a key for the join chat entry
@@ -228,7 +228,7 @@ $("#chat-send").on("click", function(event) {
 	// First, make sure that the player exists and the message box is non-empty
 	if ( (yourPlayerName !== "") && ($("#chat-input").val().trim() !== "") ) {
 		// Grab the message from the input box and subsequently reset the input box
-		var msg = "[" + moment().format("HH:mm A") + "](" + yourPlayerName + "): " + $("#chat-input").val().trim();
+		var msg = "[" + moment().format("HH:mm") + "](" + yourPlayerName + "): " + $("#chat-input").val().trim();
         $("#chat-input").val("");
 
 		// Get a key for the new chat entry
