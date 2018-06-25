@@ -16,6 +16,22 @@ h3 {
     font-size: 13px;
 }
 
+.playerdc {
+    color: red;
+}
+
+.playerjoin {
+    color: orange;
+}
+
+.chatColor1 {
+    color: green;
+}
+
+.chatColor2 {
+    color: blue;
+}
+
 #chatDisplay {
     overflow: auto;
 }

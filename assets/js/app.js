@@ -90,7 +90,7 @@ database.ref("players").on("value", function(snap) {
 	}
 });
 
-// Attach a listener to the database /chat/ node to listen for any new chat messages
+// Attach a listener to the the chat node to listen for new messages
 database.ref("chat").on("child_added", function(snap) {
     var chatMsg = snap.val();
     console.log(chatMsg);
@@ -98,16 +98,16 @@ database.ref("chat").on("child_added", function(snap) {
     var chatEntry = $("<td>" + chatMsg + "<td>");
     chatRow.append(chatEntry);
 
-	// Change the color of the chat message depending on user or connect/disconnect event
-	// if (chatMsg.includes("disconnected")) {
-	// 	chatEntry.addClass("chatColorDisconnected");
-	// } else if (chatMsg.includes("joined")) {
-	// 	chatEntry.addClass("chatColorJoined");
-	// } else if (chatMsg.startsWith(yourPlayerName)) {
-	// 	chatEntry.addClass("chatColor1");
-	// } else {
-	// 	chatEntry.addClass("chatColor2");
-	// }
+	// classes that change color of chat messages
+	if (chatMsg.includes("disconnected")) {
+		chatEntry.addClass("playerdc");
+	} else if (chatMsg.includes("joined")) {
+		chatEntry.addClass("playerjoin");
+	} else if (chatMsg.startsWith(yourPlayerName)) {
+		chatEntry.addClass("chatColor1");
+	} else {
+		chatEntry.addClass("chatColor2");
+	}
 
 	$("#chat-table").append(chatRow);
 	$("tbody").scrollTop($("tbody")[0].scrollHeight);
