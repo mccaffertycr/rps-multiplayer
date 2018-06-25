@@ -23,7 +23,7 @@ database.ref("players").on("value", function(snap) {
 
 		// Update player1 display
 		$("#playerOneName").text(player1Name);
-		$("#player1Stats").html("W: " + player1.win + ", L: " + player1.loss + ", Draw: " + player1.draw);
+		$("#player1Stats").html("W: " + player1.win + "| L: " + player1.loss + "| Draw: " + player1.draw);
 	} else {
 		console.log("Player 1 does NOT exist");
 
@@ -37,7 +37,7 @@ database.ref("players").on("value", function(snap) {
 		database.ref("/outcome/").remove();
 		$("#roundOutcome").html("Rock-Paper-Scissors");
 		$("#waitingNotice").html("");
-		$("#player1Stats").html("W: 0, L: 0, Draw: 0");
+		$("#player1Stats").html("W: 0 | L: 0 | Draw: 0");
 	}
 
 	// Check for player 2 in the database
@@ -50,7 +50,7 @@ database.ref("players").on("value", function(snap) {
 
 		// Update player2 display
 		$("#playerTwoName").text(player2Name);
-		$("#player2Stats").html("W: " + player2.win + ", L: " + player2.loss + ", Draw: " + player2.draw);
+		$("#player2Stats").html("W: " + player2.win + "| L: " + player2.loss + "| Draw: " + player2.draw);
 	} else {
 		console.log("Player 2 does NOT exist");
 
@@ -64,7 +64,7 @@ database.ref("players").on("value", function(snap) {
 		database.ref("outcome").remove();
 		$("#roundOutcome").html("Rock-Paper-Scissors");
 		$("#name-info").html("");
-		$("#player2Stats").html("W: 0, L: 0, Draw: 0");
+		$("#player2Stats").html("W: 0 | L: 0 | Draw: 0");
 	}
 
 	// If both players are now present, it's player1's turn
@@ -110,7 +110,7 @@ database.ref("chat").on("child_added", function(snap) {
 	// }
 
 	$("#chat-table").append(chatRow);
-	// $("tbody").scrollTop($("tbody")[0].scrollHeight);
+	$("tbody").scrollTop($("tbody")[0].scrollHeight);
 });
 
 // listen for disconnections
