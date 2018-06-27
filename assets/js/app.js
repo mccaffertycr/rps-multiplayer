@@ -194,7 +194,7 @@ $("#add-name").on("click", function(event) {
 				name: yourPlayerName,
 				win: 0,
 				loss: 0,
-				tie: 0,
+				draw: 0,
 				choice: ""
 			};
 
