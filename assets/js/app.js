@@ -35,7 +35,7 @@ database.ref("players").on("value", function(snap) {
 		$("#playerPanel1").removeClass("playerPanelTurn");
 		$("#playerPanel2").removeClass("playerPanelTurn");
 		database.ref("/outcome/").remove();
-		$("#roundOutcome").html("Rock-Paper-Scissors");
+		$("#roundOutcome").html("Multiplayer Rock Paper Scissors");
 		$("#waitingNotice").html("");
 		$("#player1Stats").html("W: 0 | L: 0 | Draw: 0");
 	}
