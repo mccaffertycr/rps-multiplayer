@@ -237,17 +237,18 @@ $("#chat-send").on("click", function(event) {
 		// Save the new chat entry
         database.ref("chat/" + chatKey).set(msg);
         
-	} else if (($("#chat-input").val().trim() !== "")) {
+	} 
+	//   else if (($("#chat-input").val().trim() !== "")) {
 
-		// Get a key for the new chat entry
-		var chatKey = database.ref("chat").push().key;
+	// 	// Get a key for the new chat entry
+	// 	var chatKey = database.ref("chat").push().key;
 
-		var msg = "[" + moment().format("HH:mm") + "](anon" + chatKey.slice(1, 5) + "): " + $("#chat-input").val().trim();
-        $("#chat-input").val("");
+	// 	var msg = "[" + moment().format("HH:mm") + "](anon" + chatKey.slice(1, 5) + "): " + $("#chat-input").val().trim();
+    //     $("#chat-input").val("");
 
-		// Save the new chat entry
-        database.ref("chat/" + chatKey).set(msg);
-	}
+	// 	// Save the new chat entry
+    //     database.ref("chat/" + chatKey).set(msg);
+	// }
 });
 
 // Monitor Player1's selection
