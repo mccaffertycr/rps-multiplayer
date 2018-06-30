@@ -62,7 +62,7 @@ database.ref("players").on("value", function(snap) {
 		$("#playerPanel1").removeClass("playerPanelTurn");
 		$("#playerPanel2").removeClass("playerPanelTurn");
 		database.ref("outcome").remove();
-		$("#roundOutcome").html("Rock-Paper-Scissors");
+		$("#roundOutcome").html("Multiplayer Rock Paper Scissors");
 		$("#name-info").html("");
 		$("#player2Stats").html("W: 0 | L: 0 | Draw: 0");
 	}
@@ -85,7 +85,7 @@ database.ref("players").on("value", function(snap) {
 		$("#chatDisplay").empty();
 		$("#playerPanel1").removeClass("playerPanelTurn");
 		$("#playerPanel2").removeClass("playerPanelTurn");
-		$("#roundOutcome").html("Rock-Paper-Scissors");
+		$("#roundOutcome").html("Multiplayer Rock Paper Scissors");
 		$("#waitingNotice").html("");
 	}
 });
